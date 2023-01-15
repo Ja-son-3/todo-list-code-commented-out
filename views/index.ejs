@@ -1,0 +1,47 @@
+<!DOCTYPE html><!--indicate to browser what document type to show-->
+<html lang="en"> <!--beginning of html doc and indicates the language of english-->
+<head> <!--start of the head to contain the title and metadata information-->
+    <meta charset="UTF-8"> <!--indicates what character set to use-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--sets the appropriate compatibility for microsoft internet explorer browser edge-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--sets the width of the available viewing area to the width of the device screen-->
+    <title>Document</title> <!--title of document displayed on the tab of the browser-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"> <!--links to font-awesome--> 
+    <link rel="stylesheet" href="css/style.css"> <!--link to style.css in the css folder-->
+</head>
+<body> <!--Beginning of the Body-->
+    <!DOCTYPE html> <!--potential typo-->
+<html lang="en"> <!--potential typo-->
+<head> <!--potential typo-->
+    <meta charset="UTF-8"> <!--potential typo-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--potential typo-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--potential typo-->
+    <title>Document</title> <!--potential typo-->
+</head> <!--potential typo-->
+<body> <!--potential typo, redundant (3 bodies)-->
+    <h1>Todo List: </h1> <!--Main heading for the page-->
+    <ul class="todoItems"> <!--an unordered list assigned the class of todoItems-->
+    <% for(let i=0; i < items.length; i++) {%> <!--Beginning of a for loop using ejs to create li items-->
+        <li class="item"> <!--Create a list item with a class of item-->
+            <% if(items[i].completed === true) {%> <!--activate if property at index of i in items is true-->
+                <span class='completed'><%= items[i].thing %></span> <!--Uses EJS to display item.thing at index i in a span within a li and assigns a class of completed to the li-->
+            <% }else{ %> <!--activated if item at index i with property of completed is false-->
+                <span><%= items[i].thing %></span> <!--uses EJS to display display property of item at index i in a span within a li, assigning no class -->
+            <% } %>    <!--closing the if statement in EJS-->
+            <span class='fa fa-trash'></span> <!--Display font awesome's icon of a trash can within a span-->
+        </li>
+    <% } %> <!--Closing the for loop in ejs-->
+    </ul>
+
+    <h2>Left to do: <%= left %></h2> <!--ejs used to display the left variable in -->
+
+    <h2>Add A Todo:</h2> <!--heading on page to indicate the function of the form below-->
+
+    <form action="/addTodo" method="POST"> <!--Form used to send POST request to /addTodo-->
+        <input type="text" placeholder="Thing To Do" name="todoItem"> <!--input text that is referenced/identified by todoItem name-->
+        <input type="submit"> <!--gives input form a submit button-->
+    </form>
+    
+
+    <script src='js/main.js'></script> <!--Links to main.js file for functionality-->
+</body> <!--Ending of the body-->
+</html>

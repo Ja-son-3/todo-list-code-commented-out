@@ -1,0 +1,4 @@
+node_modules
+#ignores node_modules folder when committed to the git repository, since its large and unneccesary. Any user can easily "npm install" given the package.json file to install all items in node_modules themselves
+.env
+#.env used to hide the DB string containing username and passsword to access the db

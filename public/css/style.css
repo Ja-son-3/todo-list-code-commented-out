@@ -1,0 +1,7 @@
+h1{ /* selects all h1 tags in the ejs file*/
+    color: red; /*changes h1 tag color font to red*/
+}
+.completed{ /*selects all elements with a class of completed*/
+    color: gray; /*turns the text for elements with the completed class to gray*/
+    text-decoration: line-through; /*puts a line through the middle of the text going across to elements with the completed class*/
+}
